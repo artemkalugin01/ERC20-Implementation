@@ -54,16 +54,7 @@ contract ERC20 is IERC20 {
         return _allowances[owner][spender];
     }
 
-    /**
-     * @dev See {IERC20-approve}.
-     *
-     * NOTE: If `amount` is the maximum `uint256`, the allowance is not updated on
-     * `transferFrom`. This is semantically equivalent to an infinite approval.
-     *
-     * Requirements:
-     *
-     * - `spender` cannot be the zero address.
-     */
+
     function approve(address spender, uint256 amount) public virtual override returns (bool) {
         _allowances[msg.sender][spender] = amount;
         emit Approval(msg.sender,spender,amount);
